@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Form</title>
+    <link rel="stylesheet" href="form.css">
+    
+</head>
+<body>
+    <div id="header">
+        <div class="container header-container">
+            <nav>
+                <img src="logoss.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="VehicleForm.html">Vehicle Form</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <img src="uitm.png" class="header-logo">
+                <h1>Borang Permohonan Pelajar Membawa Masuk Kenderaan ke dalam Kampus</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <form id="vehicleForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required><br><br>
+        
+            <label for="id_number">No. K/P:</label>
+            <input type="number" id="id_number" name="id_number" required><br><br>
+        
+            <label for="student_id">No. Pelajar:</label>
+            <input type="number" id="student_id" name="student_id" required><br><br>
+        
+            <label for="phone_number">No. Telefon:</label>
+            <input type="tel" id="phone_number" name="phone_number" required><br><br>
+        
+            <label for="programme_code">Kod Program:</label>
+            <input type="text" id="programme_code" name="programme_code" required><br><br>
+        
+            <label for="program">Program:</label>
+            <input type="text" id="program" name="program" required><br><br>
+        
+            <label for="faculty">Fakulti:</label>
+            <input type="text" id="faculty" name="faculty" required><br><br>
+        
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester" required>
+                <option value="">Select...</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </select><br><br>
+        
+            <label for="college_name">Nama Kolej:</label>
+            <input type="text" id="college_name" name="college_name" required><br><br>
+        
+            <label for="address">Alamat Tetap:</label>
+            <textarea id="address" name="address" rows="3" required></textarea><br><br>
+        
+            <label for="license_plate">No. Pendaftaran Kenderaan:</label>
+            <input type="text" id="license_plate" name="license_plate" required><br><br>
+        
+            <label for="vehicle_type">Jenis Kenderaan:</label>
+            <select id="vehicle_type" name="vehicle_type" required>
+                <option value="">Select...</option>
+                <option value="car">Kereta</option>
+                <option value="motorcycle">Motorsikal</option>
+            </select><br><br>
+        
+            <label for="vehicle_color">Warna Kenderaan:</label>
+            <input type="text" id="vehicle_color" name="vehicle_color" required><br><br>
+            
+            <label for="excuse">Sebab-sebab untuk membawa masuk kenderaan:</label>
+            <textarea id="excuse" name="excuse" rows="3" required></textarea><br><br>
+            <p>Sila <b>sertakan</b> dokumen berikut semasa mengemukakan di pejabat polis bantuan:<br>
+                1. Salinan kad pelajar<br>
+                2. Salinan Geran Kenderaan<br>
+                3. Salinan lesen memandu <br>
+                4. Salinan borang permohonan membawa masuk kenderaan ke dalam kampus<br><br>
+                <b>Nota:</b> Kenderaan yang tidak berdaftar dengan pihak kolej tidak dibenarkan berada di dalam kawasan kolej. Sekiranya terdapat sebarang pertanyaan, sila hubungi pihak kolej.</p><br>
+                <p>Dengan menekan butang <b>hantar</b>, saya mengesahkan bahawa semua maklumat yang diberikan adalah benar dan tepat. Saya juga bersetuju untuk mematuhi semua peraturan dan syarat yang ditetapkan oleh pihak kolej.</p>
+            <input type="submit" value="Submit" >
+        </form>
+        <footer class="footer">
+            <div class="footer-container">
+                <p>&copy; 2025 Universiti Teknologi MARA (UiTM). All rights reserved.</p>
+                <p>Developed for students that owned vechicle</p>
+            </div>
+        </footer>
+        <div class="modal hidden" id="receipt">
+            <h2>Submission Receipt</h2>
+            <div class="details" id="receiptDetails"></div>
+            <div class="print-btn">
+                <button onclick="window.print()">Print Receipt</button>
+            </div>
+        </div>
+        
+        <script src="form.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const links = document.querySelectorAll("a[href]");
+            
+                links.forEach(link => {
+                    link.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        const target = this.getAttribute("href");
+            
+                        document.body.classList.add("fade-out");
+            
+                        setTimeout(() => {
+                            window.location.href = target;
+                        }, 500); // Match the CSS transition time
+                    });
+                });
+            });
+            </script>
+    </header>
+</body>
+</html>
