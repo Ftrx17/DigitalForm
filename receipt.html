@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submission Receipt</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #ffffff;
+            padding: 30px;
+            color: #333;
+        }
+        .modal {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: auto;
+        }
+        .print-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #0d0d0e;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="header.png" class="logo">
+            </nav>
+        </div>
+    <div class="modal" id="receipt"></div>
+
+    <div class="print-btn">
+        <button onclick="window.print()">Print Receipt</button>
+        <button onclick="window.location.href='VehicleForm.html'">Back to Form</button>
+    </div>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem('vehicleFormData'));
+
+        if (!data) {
+            document.getElementById('receipt').innerHTML = "<p>No submission data found.</p>";
+        } else {
+            const receiptHtml = `
+                <h2>Submission Receipt</h2>
+                <p><strong>Name:</strong> ${data.name}</p>
+                <p><strong>ID Number:</strong> ${data.id_number}</p>
+                <p><strong>Student ID:</strong> ${data.student_id}</p>
+                <p><strong>Phone Number:</strong> ${data.phone_number}</p>
+                <p><strong>Programme Code:</strong> ${data.programme_code}</p>
+                <p><strong>Program:</strong> ${data.program}</p>
+                <p><strong>Faculty:</strong> ${data.faculty}</p>
+                <p><strong>Semester:</strong> ${data.semester}</p>
+                <p><strong>College Name:</strong> ${data.college_name}</p>
+                <p><strong>Address:</strong> ${data.address.replace(/\n/g, "<br>")}</p>
+                <p><strong>License Plate:</strong> ${data.license_plate}</p>
+                <p><strong>Vehicle Type:</strong> ${data.vehicle_type}</p>
+                <p><strong>Vehicle Color:</strong> ${data.vehicle_color}</p>
+                <p><strong>Excuse:</strong> ${data.excuse.replace(/\n/g, "<br>")}</p>
+            `;
+            document.getElementById('receipt').innerHTML = receiptHtml;
+            // Optional: Clear localStorage after use
+            localStorage.removeItem('vehicleFormData');
+        }
+    </script>
+</body>
+</html>
