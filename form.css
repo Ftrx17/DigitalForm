@@ -4,15 +4,14 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+
 body{
     background: #fff;   
     color: #000000;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
 }
-body.fade-out {
-    opacity: 0;
-}
+
 .container{
     padding: 10px 10%;
 }

@@ -3,50 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <title>UiTM Portal</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/b659c7c849.js" crossorigin="anonymous"></script>
-</head> 
+    <favicon href="fitri.png" type="image/png" sizes="16x16">
+        <script src="https://kit.fontawesome.com/b659c7c849.js" crossorigin="anonymous"></script>
+</head>
 <body>
     <div id="header">
-        <img src="fitri.png" alt="Overlay Image" class="header-overlay-img">
         <div class="container">
             <nav>
                 <img src="logoss.png" class="logo">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="VehicleForm.html">Vehicle Form</a></li>
+                    <li><a href="VehicleForm.html">Register Vehicle</a></li>
+                    <li><a href="AboutMe.html">About Me</a></li>
                 </ul>
             </nav>
             <div class="header-text">
-                <p>Information Technology, IT Student</p>
-                <h1>I'm <span>Fitri</span><br>Student from UiTM</h1>
-            </div>
-            <div id="clock"></div> <!-- Added clock div -->
-            <script src="clock.js"></script>
-        </div>
-    </div>
-    <div id="About">
-        <div class="container">
-            <div class="row">
-            <div class="about-col-1">
-                <img src="grad.JPG">
-            </div>
-                <div class="about-col-2">
-                <h1 class="subtitle"> About me</h1>
-                <p>Hi, my name is Fitri. I am a student at UiTM in the Information Technology program. I am currently in my fifth semester and I am excited to learn more about technology and its applications.</p>
-                <p>I am passionate about technology and its potential to improve our lives. I am always looking for new challenges and opportunities to learn and grow.</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('Biodata')">Biodata</p>
+                <h1>Selamat Datang<br>Ke Portal UiTM</h1>
+            
+                <div class="header-flex-container">
+                    <div class="shadow-box">
+                        <p><strong>Borang Permohonan Membawa Kenderaan Masuk ke Dalam Kampus UiTM</strong></p>
+                        <p>Sila isi borang ini untuk mendapatkan kebenaran membawa kenderaan anda ke dalam kampus UiTM. Pastikan semua maklumat diisi dengan lengkap dan tepat.</p>
+                        <a href="VehicleForm.html" class="next-button">Next</a>
                     </div>
-                    <div class="tab-contents active-tab"id ="Biodata">
-                        <ul>
-                            <li><span>Name</span><br>Ku Muhammad Fitri bin Ku Zambree</li>
-                            <li><span>Matric Number</span><br>2023168367</li>
-                            <li><span>Class Group</span><br>RCDCS2405A</li>
-                        </ul>
-                    </div>
-             </div>
+                    <img src="uitm.png" class="head-logo">
+                </div>
             </div>
         </div>
     </div>
@@ -55,46 +38,13 @@
             <h1>Contact Me</h1>
             <p>Here are my socials that you can contact me  through if you have any questions and feels free to ask.</p>
             <div class="socials">
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/kumuhdfitri_/"target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ku-muhammad-fitri-ku-zambree-719b8929a/"target="_blank"><i class="fa-brands fa-linkedin"></i></a>
             </div>
             <div class="footer-container">
                 <p>&copy; 2025 Ku Muhammad Fitri. All rights reserved.</p>
             </div>
         </div>
-    <script>
-        var tablinks = document.getElementsByClassName("tab-links");
-        var tabcontents = document.getElementsByClassName("tab-contents");
-
-    function opentab(tabname){
-            for(tablink of tablinks){
-            tablink.classList.remove("active-link");
-        }
-        for(tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
-        }
-        event.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
-    }
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const links = document.querySelectorAll("a[href]");
-        
-            links.forEach(link => {
-                link.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    const target = this.getAttribute("href");
-        
-                    document.body.classList.add("fade-out");
-        
-                    setTimeout(() => {
-                        window.location.href = target;
-                    }, 500); // Match the CSS transition time
-                });
-            });
-        });
-        </script>
-        
 </body>
 </html>
+        
