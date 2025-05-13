@@ -21,8 +21,16 @@ document.getElementById('vehicleForm').addEventListener('submit', function (e) {
 
     const errors = [];
     if (!/^\d{12}$/.test(data.id_number)) errors.push("ID Number must be exactly 12 digits.");
-    if (!/^\d{10}$/.test(data.phone_number)) errors.push("Phone Number must be exactly 10 digits.");
-    if (!/^\d{10}$/.test(data.student_id)) errors.push("Student ID must be exactly 10 digits.");
+    if (!/^\d+$/.test(data.phone_number)) {
+        errors.push("Phone Number must contain only digits.");
+    } else if (data.phone_number.length !== 10) {
+        errors.push("Phone Number must be exactly 10 digits.");
+    }
+    if (!/^\d+$/.test(data.student_id)) {
+        errors.push("Student ID must contain only digits.");
+    } else if (data.student_id.length !== 10) {
+        errors.push("Student ID must be exactly 10 digits.");
+    }
 
     if (errors.length > 0) {
         alert("Validation Error:\n" + errors.join("\n"));
