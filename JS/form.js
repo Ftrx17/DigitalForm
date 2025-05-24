@@ -20,7 +20,7 @@ document.getElementById('vehicleForm').addEventListener('submit', function (e) {
     };
 
     const errors = [];
-    if (!/^\d{12}$/.test(data.id_number)) errors.push("ID Number must be exactly 12 digits.");
+    if (!/^\d{12}$/.test(data.id_number)) errors.push("No. K/P must be exactly 12 digits.");
     if (!/^\d+$/.test(data.phone_number)) {
         errors.push("Phone Number must contain only digits.");
     } else if (data.phone_number.length !== 10) {
